@@ -3,12 +3,12 @@ name = "always-abort"
 version = "0.1.0"
 edition = "2021"
 
-description = "Calls "
-categories = ["algorithms", "caching", "data-structures", "no-std", "text-processing"]
+description = "Calls std::panic::always_abort"
+keywords = ["abort", "panic", "fork"]
 
 authors = ["Peter Lyons Kehl <peter.kehl@gmail.com>"]
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/peter-lyons-kehl/always-abort"
+repository = "https://github.com/peter-lyons-kehl/always-abort-rs"
 
 [dependencies]
 ctor = "0.2.8"
