@@ -1,9 +1,21 @@
 [package]
 name = "always-abort"
 version = "0.1.0"
+
+# Required to apply "rust-version" (MSRV), see
+# https://doc.rust-lang.org/nightly/cargo/reference/manifest.html#the-rust-version-field and
+# https://blog.rust-lang.org/2021/10/21/Rust-1.56.0.html
 edition = "2021"
 
-description = "Calls std::panic::always_abort"
+# https://github.com/rust-lang/rust/issues/84438 --> https://github.com/rust-lang/rust/pull/81858
+# was merged on 2021-05-17. That means `nightly` compatible/after `stable` around 1.54 (2021-07-29).
+# But, because we require 2021 edition, we don't need to specify `rust-version` UNTIL
+# `std::panic::always_abort()` is stabilized - because UNTIL then we have `rust-toolchain.toml`
+# require `nightly.
+#
+# rust-version = "TODO"
+
+description = "Calls std::panic::always_abort at the start of the binary"
 keywords = ["abort", "panic", "fork"]
 
 authors = ["Peter Lyons Kehl <peter.kehl@gmail.com>"]
